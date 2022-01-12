@@ -8,15 +8,18 @@ read filename
 
 lines=$( cat ${filename} )
 
+catfile=${versions[0]}
+awk '/^>/ {printf("%s%s\t",(N>0?"\n":""),$0);N++;next;} {printf("%s",$0);} END {printf("\n");}' < viral_refseq_cat.fna > linearized.fna
+
 mkdir readsims
 
 for line in ${lines}
 do
     mkdir readsims/${line}_reads
 
-    temp=\|${line}\|
-
-    grep -A1 -m1 ${temp} linearized.fna > readsims/${line}_reads/${line}_full.fna
+    temp=$( grep -A1 -m1 ${line} databases/viral_build_${catfile}/temp.catalog | awk -F '\t' '{print $3}' )
+    
+    grep ${temp} linearized.fna > readsims/${line}_reads/${line}_full.fna
 
     echo "grep complete"
 

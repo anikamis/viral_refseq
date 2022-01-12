@@ -4,12 +4,15 @@ Dependencies:
 
 Within the same directory as all the source files in this repository, you must also have:
   1. a directory named "scripts_kraken2" that contains all the scripts from Kraken2
+  
   a. refer to github.com/DerrickWood/kraken2/ for download instructions, scripts are located within github.com/DerrickWood/kraken2/tree/master/scripts
   
   2. a directory named "art_bin_MountRainier" containing the binaries for the ART illumina simulator
+  
   a. refer to https://www.niehs.nih.gov/research/resources/software/biostatistics/art/index.cfm
   
   3. a directory named "refseq_rollback" containing the scripts used by the Nasko paper
+  
   a. refer to https://github.com/dnasko/refseq_rollback
   
   4. a file named "species.txt" containing a list of taxonomic ids of species which the user desires to analyze

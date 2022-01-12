@@ -14,7 +14,14 @@ do
     echo "${VER} "
 done
 
-#./scripts_kraken2/kraken2-build --download-taxonomy --db .
+wget "https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz"
+wget "https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.2.1.genomic.fna.gz"
+wget "https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.3.1.genomic.fna.gz"
+wget "https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.4.1.genomic.fna.gz"
+
+gzip -dc viral.?.1.genomic.fna.gz > viral_refseq_cat.fna
+
+./scripts_kraken2/kraken2-build --download-taxonomy --db .
 
 mkdir databases
 cd databases

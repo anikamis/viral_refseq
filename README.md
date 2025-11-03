@@ -32,15 +32,13 @@ This repo contains:
     a. this calls scripts from scripts_kraken2 & refseq_rollback
 
 
-2. sim_and_kraken.sh: a bash script that will create simulated reads all the species in "species.txt", and then run Kraken2 on the reads using the database for each version
+2. sim_and_kraken.sh: a bash script that will create simulated reads of all the species in "species.txt", and then run Kraken2 on the reads using the database for each version
     
     a. this calls scripts from scripts_kraken2 and art_bin_MountRainier
 
 
 3. tree_parse.py: a python script that will create "final.csv", which summarizes all the nodes and their sizes over versions, and "kraken.csv", which summarizes the kraken2 output of the desired species from the file. Please note that as of now, this script has hardcoded version numbers 70, 80, 90, 200, 208.
     
-    a. this is largely based upon https://github.com/romainstuder/evosite3d/blob/master/parse_taxbrowser.py
-
 
 
 In order to yield the same data, run the three scripts in listed order above (./create_dbs.sh, ./sim_and_kraken.sh, tree_parse.py)

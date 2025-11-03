@@ -1,4 +1,5 @@
 # viral_refseq
+Summarizes Kraken2 read classification output across various versions of RefSeq
 
 Dependencies:
 
